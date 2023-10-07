@@ -49,4 +49,7 @@
     .stop {
         margin-top: 50%;
     }
+    .startDiv input {
+        padding : 10px;
+    }    
 }
