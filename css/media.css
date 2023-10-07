@@ -2,4 +2,51 @@
     .road {
         width: 100%;
     }
+
+    .startDiv button {
+        font-size: 10px;
+    }
+
+    .MyCar img,.car img   {
+     height: 60%;
+    }
+    .MyCar {
+        height: auto !important;
+        bottom: 0%;
+    }
+    .car {
+        height: auto !important;
+    }
+    .road {
+        height: 90%;
+    }
+    .car-button {
+        display: block;
+        height: 10%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .leftbtn {
+        padding: 10px;
+        border-radius: 4px;
+        line-height: 100%;
+        text-align: center;
+        background: black;
+        border: 0;
+        color: white;
+    }
+
+    .rightbtn {
+        padding: 10px;
+        border-radius: 4px;
+        line-height: 100%;
+        text-align: center;
+        background: black;
+        border: 0;
+        color: white;
+    }
+    .stop {
+        margin-top: 50%;
+    }
 }

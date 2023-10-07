@@ -11,11 +11,13 @@ let sideCarEffect = new Audio('./multimedia/sideCarMusic.mp3')
 var count = 0;
 var score = 0;
 
+const rightbtn = document.querySelector('.rightbtn');
+const leftbtn = document.querySelector('.leftbtn');
+
 document.querySelector('#start').addEventListener('click', function () {
     if (document.querySelector('#userName').value == '') {
         alert('Enter your name first to start the game')
     }
-
     else {
         startGame();
     }
@@ -39,6 +41,14 @@ function startGame() {
     Mycar.style.transform = 'translateY(0px)';
     document.querySelector('.score').style.display = 'block';
 
+    if (window.innerWidth > 568) {
+        var widthWise = 42;
+        var heightWise = 88;
+    }
+    else {
+        widthWise = 25;
+        heightWise = 50;
+    }
     carLeft = 3;
 
     document.onkeydown = function (event) {
@@ -67,6 +77,30 @@ function startGame() {
                 }
         }
     };
+
+    rightbtn.addEventListener('click', function () {
+        carLeft--
+        if (carLeft >= 0) {
+            Mycar.style.transition = '0s';
+            console.log(Mycar.style.left = `${Car_positionArray[carLeft]}%`)
+        }
+        else {
+            carLeft = 0;
+            sideCarEffect.play();
+        }
+    })
+
+    leftbtn.addEventListener('click', function () {
+        carLeft++;
+        if (carLeft < 6) {
+            Mycar.style.transition = '0s';
+            Mycar.style.left = `${Car_positionArray[carLeft]}%`;
+        }
+        else {
+            carLeft = 5;
+            sideCarEffect.play();
+        }
+    })
 
     stopScore = setInterval(function () {
         if (localStorage.getItem('score') != 'true') {
@@ -102,8 +136,8 @@ function startGame() {
 
             setInterval(function () {
 
-                if ((Math.abs(Mycar.getBoundingClientRect().x - AddDiv.getBoundingClientRect().x)) < 42) {
-                    if (Math.abs(Mycar.getBoundingClientRect().top - AddDiv.getBoundingClientRect().top) < 88) {
+                if ((Math.abs(Mycar.getBoundingClientRect().x - AddDiv.getBoundingClientRect().x)) < widthWise) {
+                    if (Math.abs(Mycar.getBoundingClientRect().top - AddDiv.getBoundingClientRect().top) < heightWise) {
                         AddDiv.style.animationPlayState = 'paused';
                         document.querySelector('.road').style.animationPlayState = 'paused';
                         document.querySelector('.stop').style.display = 'block';

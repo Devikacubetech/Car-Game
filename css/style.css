@@ -143,6 +143,10 @@ body {
     color: white;
 }
 
+.stop {
+    margin-top: 20%;
+}
+
 .score {
     position: absolute;
     top: 1%;
@@ -169,4 +173,8 @@ body {
 
 .startDiv p {
     text-align: center;
+}
+
+.car-button  {
+    display: none;
 }
