@@ -18,11 +18,11 @@
         height: auto !important;
     }
     .road {
-        height: 90%;
+        height: 556px;
     }
     .car-button {
         display: block;
-        height: 10%;
+        height: 62px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
