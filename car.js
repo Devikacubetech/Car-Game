@@ -42,12 +42,12 @@ function startGame() {
     document.querySelector('.score').style.display = 'block';
 
     if (window.innerWidth > 568) {
-        var widthWise = 42;
-        var heightWise = 88;
+        var widthWisegap = 42;
+        var heightWisegap = 88;
     }
     else {
-        widthWise = 25;
-        heightWise = 50;
+        widthWisegap = 25;
+        heightWisegap = 50;
     }
     carLeft = 3;
 
@@ -136,8 +136,8 @@ function startGame() {
 
             setInterval(function () {
 
-                if ((Math.abs(Mycar.getBoundingClientRect().x - AddDiv.getBoundingClientRect().x)) < widthWise) {
-                    if (Math.abs(Mycar.getBoundingClientRect().top - AddDiv.getBoundingClientRect().top) < heightWise) {
+                if ((Math.abs(Mycar.getBoundingClientRect().x - AddDiv.getBoundingClientRect().x)) < widthWisegap) {
+                    if (Math.abs(Mycar.getBoundingClientRect().top - AddDiv.getBoundingClientRect().top) < heightWisegap) {
                         AddDiv.style.animationPlayState = 'paused';
                         document.querySelector('.road').style.animationPlayState = 'paused';
                         document.querySelector('.stop').style.display = 'block';
